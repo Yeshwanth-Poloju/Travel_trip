@@ -1,0 +1,55 @@
+/* /frontend/src/components/Dashboard.css */
+.dashboard {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    text-align: -webkit-center;
+}
+
+h2 {
+    color: #333;
+}
+
+h3 {
+    color: #555;
+}
+
+.trip-list {
+    list-style-type: none;
+    padding: 0;
+    
+}
+
+.trip-item {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.trip-item button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: orange;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.delete-button {
+    background-color: red !important;
+}
+
+.trip-item button:hover {
+    background-color: #0056b3;
+}
+
+.trip-form {
+    margin-bottom: 20px;
+}
