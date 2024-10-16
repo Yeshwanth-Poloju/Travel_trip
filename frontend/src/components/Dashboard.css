@@ -1,4 +1,5 @@
 /* /frontend/src/components/Dashboard.css */
+
 .dashboard {
     padding: 20px;
     font-family: Arial, sans-serif;
@@ -6,6 +7,56 @@
     text-align: -webkit-center;
 }
 
+/* Flexbox layout for two columns */
+.dashboard-container {
+    display: flex;
+    height: 100vh; /* Full height for the layout */
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 25%; /* Sidebar width */
+    background-color: #f4f4f4; /* Light background color */
+    padding: 20px;
+    border-right: 1px solid #ccc; /* Optional border for separation */
+    text-align: left; /* Align buttons to the left */
+}
+
+.sidebar h2 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.content-area {
+    width: 75%; /* Content area width */
+    padding: 20px;
+}
+
+/* Button styles in the sidebar */
+.toggle-button {
+    display: block;
+    width: 10%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center; /* Align text to the left */
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+.toggle-button.active {
+    background-color: #0056b3; /* Different color for active state */
+}
+
+.toggle-button:hover {
+    background-color: #0056b3; /* Hover effect */
+}
+
+/* Trip list and form styles */
 h2 {
     color: #333;
 }
@@ -17,7 +68,6 @@ h3 {
 .trip-list {
     list-style-type: none;
     padding: 0;
-    
 }
 
 .trip-item {
@@ -29,7 +79,6 @@ h3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
 }
 
 .trip-item button {
@@ -42,6 +91,7 @@ h3 {
     cursor: pointer;
     transition: background-color 0.3s;
 }
+
 .delete-button {
     background-color: red !important;
 }
@@ -52,4 +102,8 @@ h3 {
 
 .trip-form {
     margin-bottom: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for better visual appeal */
 }
