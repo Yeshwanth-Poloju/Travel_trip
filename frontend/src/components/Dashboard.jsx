@@ -1,5 +1,6 @@
 // /frontend/src/components/Dashboard.jsx
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import TripForm from './TripForm';
 import axios from 'axios';
 import './Dashboard.css'; // Import the CSS file
@@ -8,10 +9,25 @@ const Dashboard = () => {
   const [trips, setTrips] = useState([]);
   const [selectedTrip, setSelectedTrip] = useState(null);
   const [view, setView] = useState('viewTrips'); // State to toggle between views
+  const navigate = useNavigate();
 
   const fetchTrips = async () => {
-    const response = await axios.get('http://localhost:5000/api/trips');
-    setTrips(response.data);
+    const token = localStorage.getItem('token');
+    if (!token) {
+      navigate('/'); // Redirect to login if token is not found
+    }
+
+    try {
+      const response = await axios.get('http://localhost:5000/api/trips', {
+        headers: {
+          Authorization: token, // Include the token in the request headers
+        },
+      });
+      setTrips(response.data);
+    } catch (error) {
+      console.error('Failed to fetch trips:', error);
+      navigate('/'); // Redirect to login if token is invalid
+    }
   };
 
   useEffect(() => {
